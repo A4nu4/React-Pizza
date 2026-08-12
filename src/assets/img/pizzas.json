@@ -1,0 +1,102 @@
+[
+  {
+    "id": 0,
+    "imageUrl": "https://media.dodostatic.net/image/r:584x584/01995c3ba79572b0bef1f929f85cba83.webp",
+    "title": "Пепперони Фреш",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 803,
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 1,
+    "imageUrl": "https://media.dodostatic.net/image/r:584x584/01995c3abfda7669b8fdf577f86b07a9.webp",
+    "title": "Сырная",
+    "types": [0],
+    "sizes": [26, 40],
+    "price": 245,
+    "category": 0,
+    "rating": 6
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://media.dodostatic.net/image/r:584x584/019a2eef89a87708b26ff8edfac613bc.webp",
+    "title": "Цыпленок барбекю",
+    "types": [0],
+    "sizes": [26, 40],
+    "price": 295,
+    "category": 1,
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://media.dodostatic.net/image/r:584x584/01995c3ee08e7147b2b1a38bc2f25f39.webp",
+    "title": "Двойной цыпленок",
+    "types": [1],
+    "sizes": [26, 30, 40],
+    "price": 275,
+    "category": 2,
+    "rating": 2
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://media.dodostatic.net/image/r:584x584/01995c33ec9b7190911c2a7b133ee389.webp",
+    "title": "Чикен бургер",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 415,
+    "category": 3,
+    "rating": 8
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://media.dodostatic.net/image/r:584x584/01995c6971d2789d92e6413177337d53.webp",
+    "title": "Двойная пепперони",
+    "types": [0],
+    "sizes": [30, 40],
+    "price": 580,
+    "category": 2,
+    "rating": 2
+  },
+  {
+    "id": 6,
+    "imageUrl": "https://media.dodostatic.net/image/r:584x584/01995c2bbccc719094cc6fd0ead33551.webp",
+    "title": "Пепперони",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 675,
+    "category": 1,
+    "rating": 9
+  },
+  {
+    "id": 7,
+    "imageUrl": "https://media.dodostatic.net/image/r:584x584/01995c54d41178da8539c768e3232d2b.webp",
+    "title": "Маргарита",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 450,
+    "category": 4,
+    "rating": 10
+  },
+  {
+    "id": 8,
+    "imageUrl": "https://media.dodostatic.net/image/r:584x584/01995c479e6e7430b77b3b72a73d0416.webp",
+    "title": "Четыре сезона",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 395,
+    "category": 5,
+    "rating": 10
+  },
+  {
+    "id": 9,
+    "imageUrl": "https://media.dodostatic.net/image/r:584x584/019edfca6a9370b98787ade9c962fea5.webp",
+    "title": "Ветчина и грибы",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 285,
+    "category": 5,
+    "rating": 7
+  }
+]

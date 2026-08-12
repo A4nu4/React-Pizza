@@ -1,37 +1,39 @@
 import React from "react";
 
-export default function PizzaBlock({ title, price }) {
-  const [pizzaCount, setPizzaCount] = React.useState(0);
-
-  const onClickAdd = () => {
-    setPizzaCount((pizzaCount) => pizzaCount + 1);
-  };
+export default function PizzaBlock({ title, price, imageUrl, sizes, types }) {
+  const [activeType, setActiveType] = React.useState(0);
+  const [activeSize, setActiveSize] = React.useState(0);
+  const typeNames = ["тонкое", "традиционное"];
 
   return (
     <div className="pizza-block">
-      <img
-        className="pizza-block__image"
-        src="https://media.dodostatic.net/image/r:1875x1875/01995c60a7bc701e9c2376fa4aa783d9.jpeg"
-        alt="Pizza"
-      />
+      <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
       <h4 className="pizza-block__title">{title}</h4>
       <div className="pizza-block__selector">
         <ul>
-          <li className="active">тонкое</li>
-          <li>традиционное</li>
+          {types.map((typeId) => (
+            <li
+              onClick={() => setActiveType(typeId)}
+              className={activeType === typeId ? "active" : ""}
+            >
+              {typeNames[typeId]}
+            </li>
+          ))}
         </ul>
         <ul>
-          <li className="active">26 см.</li>
-          <li>30 см.</li>
-          <li>40 см.</li>
+          {sizes.map((size, i) => (
+            <li
+              onClick={() => setActiveSize(i)}
+              className={activeSize === i ? "active" : ""}
+            >
+              {size} см.
+            </li>
+          ))}
         </ul>
       </div>
       <div className="pizza-block__bottom">
         <div className="pizza-block__price">от {price} ₽</div>
-        <div
-          onClick={onClickAdd}
-          className="button button--outline button--add"
-        >
+        <div className="button button--outline button--add">
           <svg
             width="12"
             height="12"
@@ -45,7 +47,7 @@ export default function PizzaBlock({ title, price }) {
             />
           </svg>
           <span>Добавить</span>
-          <i>{pizzaCount}</i>
+          <i>0</i>
         </div>
       </div>
     </div>
