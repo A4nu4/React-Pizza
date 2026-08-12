@@ -8,8 +8,6 @@ import PizzaBlock from "./components/PizzaBlock.jsx";
 import pizzas from "./assets/img/pizzas.json";
 import "./scss/app.scss";
 
-console.log(pizzas);
-
 function App() {
   return (
     <div className="wrapper">
@@ -17,13 +15,13 @@ function App() {
       <div className="content">
         <div className="container">
           <div className="content__top">
-            <Categories />
+            {/*  Categories */}
             <Sort />
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
             {pizzas.map((obj) => (
-              <PizzaBlock {...obj} />
+              <PizzaBlock key={obj.id} {...obj} />
             ))}
           </div>
         </div>
