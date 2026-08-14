@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.19.0",
     "lodash.debounce": "^4.0.8",
+    "qs": "^6.15.3",
     "react": "^19.2.8",
     "react-content-loader": "^7.1.2",
     "react-devtools": "^7.0.1",
