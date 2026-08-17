@@ -6,16 +6,24 @@ const CartItem = ({ id, title, type, size, price, count, imageUrl }) => {
   const dispatch = useDispatch();
 
   const onClickPlus = () => {
-    dispatch(addItem(id));
+    dispatch(
+      addItem({
+        id,
+      }),
+    );
   };
 
   const onClickMinus = () => {
-    dispatch(minusItem(id));
+    dispatch(
+      minusItem({
+        id,
+      }),
+    );
   };
 
   const onClickRemove = () => {
     if (window.confirm("Вы действительно хотите удалить товар?")) {
-      dispatch(removeItem);
+      dispatch(removeItem(id));
     }
   };
 
