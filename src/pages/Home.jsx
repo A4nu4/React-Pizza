@@ -4,11 +4,13 @@ import qs from "qs";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+import { setItems } from "../redux/slices/pizzaSlice";
 import {
   setCategoryId,
   setCurrentPage,
   setFilters,
 } from "../redux/slices/filterSlice";
+
 import Categories from "../components/Categories";
 import Sort, { sortList } from "../components/Sort";
 import PizzaBlock from "../components/PizzaBlock";
@@ -22,12 +24,12 @@ const Home = () => {
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
 
+  const items = useSelector((state) => state.pizza.items);
   const { categoryId, sort, currentPage } = useSelector(
     (state) => state.filter,
   );
 
   const { searchValue } = React.useContext(SearchContext);
-  const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
   const onChangeCategory = (id) => {
@@ -38,7 +40,7 @@ const Home = () => {
     dispatch(setCurrentPage(number));
   };
 
-  const fetchPizzas = () => {
+  const fetchPizzas = async () => {
     setIsLoading(true);
 
     const order = sort.sortProperty.includes("-") ? "asc" : "desc";
@@ -46,14 +48,32 @@ const Home = () => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const search = searchValue ? `search=${searchValue}` : "";
 
-    axios
-      .get(
+    // await axios
+    //   .get(
+    //     `https://6a7c56b1a008c10e4cbf4595.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}${search}`,
+    //   )
+    //   .then((res) => {
+    //     setItems(res.data);
+    //     setIsLoading(false);
+    //     console.log(6666);
+    //   })
+    //   .catch((err) => {
+    //     setIsLoading(false);
+    //   });
+
+    try {
+      const { data } = await axios.get(
         `https://6a7c56b1a008c10e4cbf4595.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}${search}`,
-      )
-      .then((res) => {
-        setItems(res.data);
-        setIsLoading(false);
-      });
+      );
+      dispatch(setItems(data));
+    } catch (error) {
+      console.log("ERROR", error);
+      alert("Ошибка при получении пицц");
+    } finally {
+      setIsLoading(false);
+    }
+
+    window.scrollTo(0, 0);
   };
 
   // Если изменили параметры и был первый рендер

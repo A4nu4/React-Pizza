@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const CartEmpty = () => {
   return (
-    <div class="cart cart--empty">
+    <div className="cart cart--empty">
       <h2>
         Корзина пустая <icon>😕</icon>
       </h2>
@@ -14,7 +14,7 @@ const CartEmpty = () => {
         Для того, чтобы заказать пиццу, перейди на главную страницу.
       </p>
       <img src={cartEmptyImg} alt="Empty cart"></img>
-      <Link to="/" class="button button-black">
+      <Link to="/" className="button button-black">
         <span>Вернуться назад</span>
       </Link>
     </div>
