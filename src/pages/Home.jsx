@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import qs from "qs";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import {
   setCategoryId,
@@ -87,14 +87,11 @@ const Home = () => {
     isSearch.current = false;
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
-  const pizzas = items
-    .filter((obj) => {
-      if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
-        return true;
-      }
-      return false;
-    })
-    .map((obj) => <PizzaBlock key={obj.id} {...obj} />);
+  const pizzas = items.map((obj) => (
+    <Link key={obj.id} to={`/pizza/${obj.id}`}>
+      <PizzaBlock {...obj} />
+    </Link>
+  ));
   const skeletons = [...new Array(6)].map((_, index) => <Skeleton />);
 
   return (
