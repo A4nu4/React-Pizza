@@ -28,8 +28,8 @@ const Home: React.FC = () => {
   const { categoryId, sort, currentPage, searchValue } =
     useSelector(selectFilter);
 
-  const onChangeCategory = (id: number) => {
-    dispatch(setCategoryId(id));
+  const onChangeCategory = (idx: number) => {
+    dispatch(setCategoryId(idx));
   };
 
   const onChangePage = (page: number) => {
