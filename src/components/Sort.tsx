@@ -1,13 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useWhyDidYouUpdate } from "ahooks";
 
-import {
-  selectSort,
-  setSort,
-  Sort,
-  SortPropertyEnum,
-} from "../redux/slices/filterSlice.ts";
+import { selectSort } from "../redux/filter/selectors.ts";
+import { setSort } from "../redux/filter/slice.ts";
+import { Sort, SortPropertyEnum } from "../redux/filter/types.ts";
 
 type SortItem = {
   name: string;
@@ -34,8 +30,6 @@ const SortPopup: React.FC<SortPopupProps> = React.memo(({ value }) => {
   const dispatch = useDispatch();
   const sort = useSelector(selectSort);
   const sortRef = React.useRef<HTMLDivElement>(null);
-
-  useWhyDidYouUpdate("SortPopup", { value });
 
   const [open, setOpen] = React.useState(false);
 
